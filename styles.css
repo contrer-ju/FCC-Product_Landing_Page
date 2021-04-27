@@ -2,10 +2,14 @@ body {
   font-family: sans-serif;
   margin: 0 5px;
 }
+
 #header {
   position: sticky;
   top: 0;
+  padding-bottom: 15px;
   background-color: white;
+  z-index: 10;
+  max-width: 97vw;
 }
 
 #header-container {
@@ -15,8 +19,14 @@ body {
 }
 
 #header-img {
-  width: 70px;
+  width: 90%;
   height: auto;
+  margin: auto;
+}
+
+#header-title {
+  justify-self: start;
+  align-self: center;
 }
 
 #header-links {
@@ -26,17 +36,49 @@ body {
 
 #nav-bar {
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
 }
 
-#video-container {
+@media (max-width: 1000px) {
+  #nav-bar {
+    flex-direction: column;
+  }
+}
+
+#main {
+  width: 90vw;
+  margin: auto;
+}
+
+#video-container{
+max-width: 55vw;
+height: auto;
+margin: auto;
+}
+
+.video-responsive {
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: auto;
-}
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+  z-index: 1;
+	}
+
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+  z-index: 1;
+	}
 
 #video {
-  width: 100%;
-  height: 700px;
   justify-self: center;
   align-self: center;
 }
@@ -44,7 +86,7 @@ body {
 #flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .flex-items {
@@ -59,4 +101,14 @@ body {
   #flex-container {
     flex-direction: column;
   }
+}
+
+.image {
+  max-width: 60%;
+  height: auto;
+  margin: auto;
+}
+
+p {
+  text-align: justify;
 }
